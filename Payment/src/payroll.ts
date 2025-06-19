@@ -19,6 +19,13 @@ export class Payroll<T extends EmployeeContract> {
   showPayroll(): void {
     console.log('Folha Salarial')
     console.log('-')
-    console.log(this.calculate())
+
+    let count = 0
+
+    console.log('FUNCIONÁRIO | SALÁRIO')
+    for (const employees of this.calculate()) {
+      console.log(`${employees[count]} |  ${employees[count + 1]}`)
+    }
+    count += 1
   }
 }
