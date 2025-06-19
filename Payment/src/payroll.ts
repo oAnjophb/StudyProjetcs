@@ -7,8 +7,18 @@ export class Payroll<T extends EmployeeContract> {
     this.employees.set(name, Employee)
   }
 
-  calculate(): void {
+  calculate(): Map<string, number> {
+    const salaries = new Map<string, number>()
+
+    for (const [name, employee] of this.employees.entries()) {
+      salaries.set(name, employee.CalculateSalary())
+    }
+    return salaries
   }
 
-  showPayroll(): void {}
+  showPayroll(): void {
+    console.log('Folha Salarial')
+    console.log('-')
+    console.log(this.calculate())
+  }
 }
