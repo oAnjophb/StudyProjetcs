@@ -12,5 +12,10 @@ managerTask.addTask("p2", p2)
 managerTask.addTask("w1", w1)
 managerTask.addTask("w2", w2)
 
-managerTask.listTaskPrority(3)
-managerTask.complete()
+
+
+const priorityChoiced = 3
+
+for (const [key, task] of managerTask.listTaskPrority(priorityChoiced)) {
+  console.log(key, task)
+}

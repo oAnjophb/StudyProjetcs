@@ -15,14 +15,10 @@ export class TaskManager<T extends TaskContract> {
     const priorities = new Map<string, Task>()
 
     for (const [name, task] of this.tasks.entries()) {
-      if (priorityChoice) {
-        if (this.SearchPriority(priorityChoice) == task.getDescription()) {
-          priorities.set(name, task)
-          break
-        } else {
-          throw new Error ('Task priority dont found')
-        }
-      } else {
+      if (
+        priorityChoice === undefined ||
+        task.getPriority() === priorityChoice
+      ) {
         priorities.set(name, task)
       }
     }
