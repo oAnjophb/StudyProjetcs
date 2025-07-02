@@ -21,24 +21,9 @@ const prettierRules = {
 }
 
 export default [
-  // Ignora arquivos e pastas que não devem ser analisados
   {
-    ignores: [
-      'build/**',
-      'coverage/**',
-      'node_modules/**',
-      '*.md',
-      '*.json',
-      '*.lock',
-      '*.yml',
-      '*.yaml',
-      '*.txt',
-      'README.md',
-      'package.json',
-      'tsconfig.json',
-    ],
+    ignores: ['build/**', 'coverage/**', 'node_modules/**'],
   },
-  // TypeScript: src e test
   {
     files: ['src/**/*.ts', 'test/**/*.ts'],
     languageOptions: {
@@ -63,21 +48,19 @@ export default [
       '@typescript-eslint': eslintPluginTypeScript,
     },
     rules: {
-      // Garante que nunca haverá ponto e vírgula
-      'semi': ['error', 'never'],
-      // Integração Prettier
+      // Prettier rules integrated with ESLint
       'prettier/prettier': ['error', prettierRules],
 
-      // Boas práticas gerais
+      // General best practice rules
       // 'no-console': 'warn',
       'no-debugger': 'error',
 
-      // Regras TypeScript
+      // Regras para TypeScript
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
 
-      // Imports
+      // Imports rules
       'import/order': [
         'error',
         {
@@ -98,14 +81,14 @@ export default [
         },
       ],
 
-      // Jest
+      // Jest rules
       'jest/no-disabled-tests': 'warn',
       'jest/no-focused-tests': 'error',
       'jest/no-identical-title': 'error',
       'jest/prefer-to-have-length': 'warn',
       'jest/valid-expect': 'error',
 
-      // Promises
+      // Promises rules
       'promise/always-return': 'warn',
       'promise/no-return-wrap': 'error',
       'promise/catch-or-return': 'error',
@@ -119,7 +102,7 @@ export default [
       },
     },
   },
-  // JavaScript files
+  // Javascript files rules
   {
     files: ['*.js', '*.cjs', '*.mjs', '**/*.js', '**/*.cjs', '**/*.mjs'],
     languageOptions: {
@@ -131,12 +114,10 @@ export default [
       prettier: eslintPluginPrettier,
     },
     rules: {
-      // Garante JS sem ponto e vírgula também
-      semi: ['error', 'never'],
       'prettier/prettier': ['error', prettierRules],
     },
   },
-  // JSON files
+  // JSON files rules
   {
     files: ['*.json'],
     plugins: {
@@ -149,7 +130,7 @@ export default [
       },
     },
     rules: {
-      'prettier/prettier': ['error', { semi: false }],
+      'prettier/prettier': 'error',
     },
   },
   // Markdown files
@@ -160,6 +141,5 @@ export default [
     },
     processor: 'markdown/markdown',
   },
-  // Garante que Prettier prevaleça sobre regras conflitantes do ESLint
   eslintConfigPrettier,
 ]
