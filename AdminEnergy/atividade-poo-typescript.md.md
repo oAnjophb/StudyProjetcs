@@ -27,8 +27,8 @@ O projeto deve ser desenvolvido em **TypeScript**, utilizando **POO (Programaç�
 ### 3. Sistema de filas de atendimento
 
 - Implementar duas filas: **presencial** e **online**.
-    - **Presencial:** O cliente pega uma senha física ao chegar e entra na fila de atendimento.
-    - **Online:** O cliente entra na fila virtual para atendimento remoto.
+  - **Presencial:** O cliente pega uma senha física ao chegar e entra na fila de atendimento.
+  - **Online:** O cliente entra na fila virtual para atendimento remoto.
 - O sistema deve atribuir a senha ao próximo atendente disponível.
 - Caso **não haja movimentação ou alteração na fila em 6 horas**, a fila deve ser reiniciada do zero.
 - Clientes devem ser atendidos conforme a ordem de chegada.
