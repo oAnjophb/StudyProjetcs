@@ -97,33 +97,33 @@ DB_PASSWORD=mies
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      NODE_ENV: "dev" | "test" | "prod";
+      NODE_ENV: "dev" | "test" | "prod"
 
-      API_KEY: string;
+      API_KEY: string
 
-      DB_SCHEMA: string;
-      DB_NAME: string;
-      DB_USER: string;
-      DB_PASSWORD: string;
+      DB_SCHEMA: string
+      DB_NAME: string
+      DB_USER: string
+      DB_PASSWORD: string
     }
   }
 }
 
-export {};
+export {}
 ```
 
 **`src/main.ts`**
 
 ```ts
-import dotenv from "dotenv";
+import dotenv from "dotenv"
 
 const initApp = () => {
-  dotenv.config();
-};
+  dotenv.config()
+}
 
 const main = () => {
-  initApp();
-};
+  initApp()
+}
 ```
 
 #### 3. Setup Typescript
@@ -236,7 +236,7 @@ module.exports = {
     },
   ],
   ignorePatterns: ["build", "coverage", "dist", "node_modules"],
-};
+}
 ```
 
 #### 5. Setup Jest

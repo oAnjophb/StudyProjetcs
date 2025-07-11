@@ -36,10 +36,10 @@
   "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  
+
   "files.eol": "\n",
   "files.exclude": {
     "**/coverage": false,
     "**/node_modules": true
-  },
+  }
 }
