@@ -48,16 +48,19 @@ export default [
       '@typescript-eslint': eslintPluginTypeScript,
     },
     rules: {
+      // Prettier rules integrated with ESLint
       'prettier/prettier': ['error', prettierRules],
-      semi: 'off',
-      quotes: 'off',
 
       // General best practice rules
       // 'no-console': 'warn',
       'no-debugger': 'error',
+
+      // Regras para TypeScript
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+      // Imports rules
       'import/order': [
         'error',
         {
@@ -77,11 +80,15 @@ export default [
           'newlines-between': 'always',
         },
       ],
+
+      // Jest rules
       'jest/no-disabled-tests': 'warn',
       'jest/no-focused-tests': 'error',
       'jest/no-identical-title': 'error',
       'jest/prefer-to-have-length': 'warn',
       'jest/valid-expect': 'error',
+
+      // Promises rules
       'promise/always-return': 'warn',
       'promise/no-return-wrap': 'error',
       'promise/catch-or-return': 'error',
@@ -95,6 +102,7 @@ export default [
       },
     },
   },
+  // Javascript files rules
   {
     files: ['*.js', '*.cjs', '*.mjs', '**/*.js', '**/*.cjs', '**/*.mjs'],
     languageOptions: {
@@ -107,10 +115,9 @@ export default [
     },
     rules: {
       'prettier/prettier': ['error', prettierRules],
-      semi: 'off',
-      quotes: 'off',
     },
   },
+  // JSON files rules
   {
     files: ['*.json'],
     plugins: {
@@ -126,6 +133,7 @@ export default [
       'prettier/prettier': 'error',
     },
   },
+  // Markdown files
   {
     files: ['**/*.md'],
     plugins: {
